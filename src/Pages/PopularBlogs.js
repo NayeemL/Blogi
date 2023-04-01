@@ -6,7 +6,6 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Container,
   Avatar,
 } from "@mui/material";
 import { red } from "@mui/material/colors";
