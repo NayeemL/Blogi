@@ -7,7 +7,7 @@ import {
   Box,
   SvgIcon,
 } from "@mui/material";
-import { blue, pink, red } from "@mui/material/colors";
+import { red } from "@mui/material/colors";
 import React from "react";
 import "../Css/homePage.css";
 import * as Fa from "react-icons/fa";
@@ -35,149 +35,192 @@ function footer() {
   return (
     <Box sx={{ mt: 10, backgroundColor: "whitesmoke", width: "100%" }}>
       <>
-        <Grid container space={2} sx={{ pt: 3 }}>
-          <Grid item lg={2}>
-            <Typography
-              variant="h5"
-              noWrap
-              component="h5"
-              sx={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                fontSize: "30px",
-              }}
+        <Container>
+          <Grid container space={2} sx={{ pt: 3 }}>
+            <Grid item xs={12} sm={2} md={2} lg={2}>
+              <Typography
+                variant="h5"
+                noWrap
+                component="h5"
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  fontSize: "30px",
+                  textAlign: { lg: "left", md: "left" },
+                  pb: 2,
+                }}
+              >
+                Blogi
+              </Typography>
+            </Grid>
+            <Grid item xs={4} sm={1.5} md={1.5} lg={1.5}>
+              <Typography
+                variant="body1"
+                component="div"
+                sx={{
+                  fontWeight: 500,
+                  mb: 1,
+                  textAlign: { xs: "left", lg: "left", md: "left" },
+                }}
+              >
+                Product
+              </Typography>
+              {product.map((data) => (
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  component="div"
+                  sx={{
+                    mb: 1,
+                    textAlign: { xs: "left", lg: "left", md: "left" },
+                  }}
+                >
+                  {data.name}
+                </Typography>
+              ))}
+            </Grid>
+            <Grid item xs={4} sm={1.5} md={2} lg={2}>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontWeight: 500,
+                  mb: 1,
+                  textAlign: { xs: "left", lg: "left", md: "left" },
+                }}
+                component="div"
+              >
+                Support
+              </Typography>
+              {support.map((data) => (
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  component="div"
+                  sx={{
+                    mb: 1,
+                    textAlign: { xs: "left", lg: "left", md: "left" },
+                  }}
+                >
+                  {data.name}
+                </Typography>
+              ))}
+            </Grid>
+            <Grid item xs={4} sm={2} md={2} lg={2}>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontWeight: 500,
+                  mb: 1,
+                  textAlign: { xs: "left", lg: "left", md: "left" },
+                }}
+                component="div"
+              >
+                Legal
+              </Typography>
+              {legal.map((data) => (
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  component="div"
+                  sx={{
+                    mb: 1,
+                    textAlign: { xs: "left", lg: "left", md: "left" },
+                  }}
+                >
+                  {data.name}
+                </Typography>
+              ))}
+            </Grid>
+            <Grid item xs={4} sm={2} md={2} lg={2}>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontWeight: 500,
+                  mb: 1,
+                  textAlign: { xs: "left", lg: "left", md: "left" },
+                }}
+                component="div"
+              >
+                Company
+              </Typography>
+              {company.map((data) => (
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  component="div"
+                  sx={{
+                    mb: 1,
+                    textAlign: { xs: "left", lg: "left", md: "left" },
+                  }}
+                >
+                  {data.name}
+                </Typography>
+              ))}
+            </Grid>
+            <Grid
+              item
+              xs={8}
+              sm={3}
+              md={2.5}
+              lg={2.5}
+              // sx={{ pr:{lg:6}}}
             >
-              Blogi
-            </Typography>
-          </Grid>
-          <Grid item lg={1.5}>
-            <Typography
-              variant="body1"
-              component="div"
-              align="left"
-              sx={{ fontWeight: 500, mb: 1 }}
-            >
-              Product
-            </Typography>
-            {product.map((data) => (
+              <Typography
+                variant="body1"
+                sx={{
+                  fontWeight: 500,
+                  mb: 1,
+                  textAlign: { xs: "left", lg: "left", md: "left" },
+                }}
+                component="div"
+              >
+                Get it
+              </Typography>
               <Typography
                 variant="body2"
                 color="text.secondary"
                 component="div"
-                align="left"
-                sx={{ mb: 1 }}
+                sx={{
+                  mb: 1,
+                  textAlign: { xs: "left", lg: "left", md: "left" },
+                }}
               >
-                {data.name}
+                Available on Chrome Store
               </Typography>
-            ))}
-          </Grid>
-          <Grid item lg={2}>
-            <Typography
-              variant="body1"
-              sx={{ fontWeight: 500, mb: 1 }}
-              component="div"
-              align="left"
-            >
-              Support
-            </Typography>
-            {support.map((data) => (
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                component="div"
-                align="left"
-                sx={{ mb: 1 }}
+              <Button
+                variant="contained"
+                color="secondary"
+                sx={{ display: "flex" }}
+                size="small"
               >
-                {data.name}
-              </Typography>
-            ))}
+                Download Now
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={2}>
-            <Typography
-              variant="body1"
-              sx={{ fontWeight: 500, mb: 1 }}
-              component="div"
-              align="left"
-            >
-              Legal
-            </Typography>
-            {legal.map((data) => (
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                component="div"
-                align="left"
-                sx={{ mb: 1 }}
-              >
-                {data.name}
-              </Typography>
-            ))}
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={2}>
-            <Typography
-              variant="body1"
-              sx={{ fontWeight: 500, mb: 1 }}
-              component="div"
-              align="left"
-            >
-              Company
-            </Typography>
-            {company.map((data) => (
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                component="div"
-                align="left"
-                sx={{ mb: 1 }}
-              >
-                {data.name}
-              </Typography>
-            ))}
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={2.5} sx={{ pr: 6 }}>
-            <Typography
-              variant="body1"
-              sx={{ fontWeight: 500, mb: 1 }}
-              component="div"
-              align="left"
-            >
-              Get it
-            </Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              component="div"
-              align="left"
-              sx={{ mb: 1 }}
-            >
-              Available on Chrome Store
-            </Typography>
-            <Button
-              variant="contained"
-              color="secondary"
-              sx={{ display: "flex" }}
-            >
-              Download Now
-            </Button>
-          </Grid>
-        </Grid>
+        </Container>
       </>
       <Divider />
       <>
         <Container>
-          <Grid className="footer_copyrights" sx={{pt:1}}>
-            <Grid item lg={6}>
+          <Grid
+            className="footer_copyrights"
+            sx={{
+              pt: 1,
+              display: { xs: "flex" },
+              flexDirection: { xs: "column", sm: "row", md: "row", lg: "row" },
+            }}
+          >
+            <Grid item xs={12} sm={6} md={6} lg={6}>
               <Typography
                 variant="body2"
                 color="text.secondary"
                 component="div"
-                align="left"
-                sx={{ mb: 1 }}
+                sx={{ mb: 1, textAlign: { lg: "left" } }}
               >
                 All rights are reserved @Blogi 2023
               </Typography>
             </Grid>
-            <Grid item lg={6}>
+            <Grid item xs={12} sm={6} md={6} lg={6}>
               <SvgIcon sx={{ color: red[500] }} fontSize="small">
                 <Fa.FaFacebookF />
               </SvgIcon>

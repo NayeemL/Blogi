@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import {
   Box,
@@ -45,6 +45,7 @@ function NavBar() {
               variant="h5"
               noWrap
               component="a"
+              href="/"
               sx={{
                 mr: 2,
                 flexGrow: 1,
@@ -54,6 +55,7 @@ function NavBar() {
                 fontSize:"30px",
                 letterSpacing: ".3rem",
                 color: "white",
+                textDecoration:"none"
               }}
             >
               Blogi
@@ -87,12 +89,12 @@ function NavBar() {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    {/* <Link
+                    <Link
                       style={{ textDecoration: "none", color: "white" }}
-                      to={`${page}`}
-                    > */}
+                      to={`$/${page}`}
+                    >
                     <Typography textAlign="center">{page}</Typography>
-                    {/* </Link> */}
+                    </Link>
                   </MenuItem>
                 ))}
               </Menu>
